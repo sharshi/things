@@ -11,6 +11,7 @@ const App = () => {
             <Route path="/diff" element={<DiffViewer />} />
             <Route path="/base64" element={<Base64Page />} />
             <Route path="/percentage-calculator" element={<PercentageCalculator />} />
+            <Route path="*" element={<Home />} />
         </Routes>
     );
 };
