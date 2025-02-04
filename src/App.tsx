@@ -9,6 +9,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/diff" element={<DiffViewer />} />
             <Route path="/base64" element={<Base64Page />} />
+            <Route path="*" element={<Home />} />
         </Routes>
     );
 };
