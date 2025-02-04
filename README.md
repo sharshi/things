@@ -48,3 +48,16 @@ export default tseslint.config({
   },
 })
 ```
+
+## New Feature: Percentage Calculator
+
+We have added a new feature to the project: a detailed percentage calculator. This feature allows users to calculate percentages with ease.
+
+### How to Use
+
+1. Navigate to the home page.
+2. Click on the "Percentage Calculator" link.
+3. Enter the base value and the percentage you want to calculate.
+4. Click the "Calculate" button to see the result.
+
+This feature is implemented in the `PercentageCalculator.tsx` component and is accessible via a new route in the application.
