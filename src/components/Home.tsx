@@ -11,6 +11,9 @@ export const Home = () => {
                 <li style={{ marginBottom: '10px' }}>
                     <Link to="#/base64" style={{ textDecoration: 'none', color: '#007bff', fontSize: '1.5em' }}>Base64 Encode/Decode</Link>
                 </li>
+                <li style={{ marginBottom: '10px' }}>
+                    <Link to="/percentage-calculator" style={{ textDecoration: 'none', color: '#007bff', fontSize: '1.5em' }}>Percentage Calculator</Link>
+                </li>
             </ul>
         </div>
     );
