@@ -7,6 +7,5 @@ export default defineConfig({
     base: '/things/',
     server: {
         port: 12693,
-        historyApiFallback: true,
     }
 })
