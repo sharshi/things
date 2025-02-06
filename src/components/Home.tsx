@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 export const Home = () => {
     return (
         <div style={{ textAlign: 'center', padding: '20px', backgroundColor: '#f0f8ff', color: '#333', fontFamily: 'Arial, sans-serif' }}>
