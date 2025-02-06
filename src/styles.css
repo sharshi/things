@@ -1,0 +1,178 @@
+/* PercentageCalculator.css */
+.percentage-calculator-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+
+    .percentage-calculator-input {
+        border: 1px solid black;
+        padding: 10px;
+        flex-grow: 1;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .percentage-calculator-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .percentage-calculator-result {
+        border: 1px solid black;
+        padding: 10px;
+        flex-grow: 1;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+/* Navbar.css */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    background-color: #333;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 1.2em;
+    width: 100%;
+    box-sizing: border-box;
+
+    a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 20px;
+        transition: background-color 0.3s, color 0.3s;
+
+        &:hover {
+            background-color: #555;
+        }
+
+        &.active {
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+        }
+    }
+
+    /* Media query for mobile devices */
+    @media (max-width: 600px) {
+        flex-direction: column;
+        align-items: center;
+
+        a {
+            padding: 10px;
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
+
+/* DiffViewer.css */
+.diff-viewer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+
+    .diff-viewer-textarea-container {
+        display: flex;
+        justify-content: space-between;
+        flex: 1;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .diff-viewer-textarea {
+        border: 1px solid black;
+        padding: 10px;
+        min-height: 100px;
+        flex-grow: 1;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .diff-viewer-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .diff-viewer-result-container {
+        display: flex;
+        justify-content: space-between;
+        flex: 1;
+        width: 100%;
+    }
+
+    .diff-viewer-result,
+    .diff-viewer-result-single {
+        border: 1px solid black;
+        padding: 10px;
+        min-height: 100px;
+        flex-grow: 1;
+        box-sizing: border-box;
+        white-space: pre-wrap;
+        width: 100%;
+    }
+
+    .added {
+        background-color: lightgreen;
+    }
+
+    .removed {
+        background-color: salmon;
+        text-decoration: line-through;
+    }
+}
+
+/* App.css */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Base64Page.css */
+.base64-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+
+    .base64-page-textarea {
+        border: 1px solid black;
+        padding: 10px;
+        min-height: 100px;
+        flex-grow: 1;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .base64-page-button-container {
+        display: flex;
+        justify-content: space-between;
+        flex: 1;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .base64-page-button {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}

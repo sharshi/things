@@ -4,14 +4,14 @@ import DiffViewer from './components/DiffViewer';
 import Base64Page from './components/Base64Page';
 import PercentageCalculator from './components/PercentageCalculator';
 import Navbar from './components/Navbar';
-import './App.css';
+import './styles.css';
 
 const App = () => {
 
     return (
         <div>
             <Navbar />
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px', boxSizing: 'border-box' }}>
+            <div className="app-container">
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="diff" element={<DiffViewer />} />

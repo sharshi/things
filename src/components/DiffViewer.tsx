@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { diffWords } from 'diff';
+import '../styles.css';
 
 export const DiffViewer = () => {
     const [leftText, setLeftText] = useState('');
@@ -25,51 +26,40 @@ export const DiffViewer = () => {
             const span = document.createElement('span');
             span.textContent = part.value;
             if (part.added && side === 'right') {
-                span.style.backgroundColor = 'lightgreen';
+                span.className = 'added';
             } else if (part.removed && side === 'left') {
-                span.style.backgroundColor = 'salmon';
-                span.style.textDecoration = 'line-through';
+                span.className = 'removed';
             }
             element.appendChild(span);
         });
     };
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flex: 1, padding: '20px', boxSizing: 'border-box', width: '100%' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', flex: 1, marginBottom: '20px', width: '100%' }}>
+        <div className="diff-viewer-container">
+            <div className="diff-viewer-textarea-container">
                 <textarea
                     placeholder="Left text"
                     value={leftText}
                     onChange={(e) => setLeftText(e.target.value)}
-                    className="child"
-                    style={{ border: '1px solid black', padding: '10px', minHeight: '100px', flexGrow: 1, boxSizing: 'border-box', width: '100%' }}
+                    className="diff-viewer-textarea"
                 />
                 <textarea
                     placeholder="Right text"
                     value={rightText}
                     onChange={(e) => setRightText(e.target.value)}
-                    className="child"
-                    style={{ border: '1px solid black', padding: '10px', minHeight: '100px', flexGrow: 1, boxSizing: 'border-box', width: '100%' }}
+                    className="diff-viewer-textarea"
                 />
             </div>
-            <button onClick={() => setIsSplitView(!isSplitView)} style={{ padding: '10px 20px', fontSize: '16px', marginBottom: '20px' }}>
+            <button onClick={() => setIsSplitView(!isSplitView)} className="diff-viewer-button">
                 Toggle Split View
             </button>
             {isSplitView ? (
-                <div style={{ display: 'flex', justifyContent: 'space-between', flex: 1, width: '100%' }}>
-                    <div
-                        ref={leftRef}
-                        className="child"
-                        style={{ border: '1px solid black', padding: '10px', minHeight: '100px', flexGrow: 1, boxSizing: 'border-box', whiteSpace: 'pre-wrap', width: '100%' }}
-                    />
-                    <div
-                        ref={rightRef}
-                        className="child"
-                        style={{ border: '1px solid black', padding: '10px', minHeight: '100px', flexGrow: 1, boxSizing: 'border-box', whiteSpace: 'pre-wrap', width: '100%' }}
-                    />
+                <div className="diff-viewer-result-container">
+                    <div ref={leftRef} className="diff-viewer-result" />
+                    <div ref={rightRef} className="diff-viewer-result" />
                 </div>
             ) : (
-                <div style={{ border: '1px solid black', padding: '10px', minHeight: '100px', flexGrow: 1, boxSizing: 'border-box', whiteSpace: 'pre-wrap', width: '100%' }}>
+                <div className="diff-viewer-result-single">
                     <div ref={leftRef} />
                     <div ref={rightRef} />
                 </div>
