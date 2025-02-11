@@ -4,9 +4,9 @@ import '../styles.css';
 const PercentageCalculator = () => {
     const [valueA, setValueA] = useState('');
     const [valueB, setValueB] = useState('');
-    const [explanation1, setExplanation1] = useState();
-    const [explanation2, setExplanation2] = useState();
-    const [explanation3, setExplanation3] = useState();
+    const [explanation1, setExplanation1] = useState(<></>);
+    const [explanation2, setExplanation2] = useState(<></>);
+    const [explanation3, setExplanation3] = useState(<></>);
 
     useEffect(() => {
         handleCalculation();
@@ -16,17 +16,10 @@ const PercentageCalculator = () => {
         const A = parseFloat(valueA);
         const B = parseFloat(valueB);
 
-        if (isNaN(A) || isNaN(B)) {
-            setExplanation1('Invalid input');
-            setExplanation2('Invalid input');
-            setExplanation3('Invalid input');
-            return;
-        }
-
-        if (B === 0) {
-            setExplanation1('Error: Division by zero');
-            setExplanation2('Error: Division by zero');
-            setExplanation3('Error: Division by zero');
+        if (isNaN(A) || isNaN(B) || B === 0) {
+            setExplanation1(<>'Invalid input'</>);
+            setExplanation2(<>'Invalid input'</>);
+            setExplanation3(<>'Invalid input'</>);
             return;
         }
 
