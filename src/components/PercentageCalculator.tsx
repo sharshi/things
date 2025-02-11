@@ -54,48 +54,54 @@ const PercentageCalculator = () => {
 
     return (
         <div className="percentage-calculator-container">
-            <h1>Percentage Calculator</h1>
-            <input
-                type="text"
-                placeholder="Enter value A"
-                value={valueA}
-                onChange={(e) => setValueA(e.target.value)}
-                className="percentage-calculator-input"
-            />
-            <input
-                type="text"
-                placeholder="Enter value B"
-                value={valueB}
-                onChange={(e) => setValueB(e.target.value)}
-                className="percentage-calculator-input"
-            />
-            <div className="percentage-calculator-result">
-                {result1}
+            <div className="percentage-calculator-header">
+                <h1>Percentage Calculator</h1>
             </div>
-            <textarea
-                placeholder="Explanation"
-                value={explanation1}
-                readOnly
-                className="percentage-calculator-input"
-            />
-            <div className="percentage-calculator-result">
-                {result2}
+            <div className="percentage-calculator-inputs">
+                <input
+                    type="text"
+                    placeholder="Enter value A"
+                    value={valueA}
+                    onChange={(e) => setValueA(e.target.value)}
+                    className="percentage-calculator-input"
+                />
+                <input
+                    type="text"
+                    placeholder="Enter value B"
+                    value={valueB}
+                    onChange={(e) => setValueB(e.target.value)}
+                    className="percentage-calculator-input"
+                />
             </div>
-            <textarea
-                placeholder="Explanation"
-                value={explanation2}
-                readOnly
-                className="percentage-calculator-input"
-            />
-            <div className="percentage-calculator-result">
-                {result3}
+            <div className="percentage-calculator-results">
+                <div className="percentage-calculator-result">
+                    {result1}
+                </div>
+                <textarea
+                    placeholder="Explanation"
+                    value={explanation1}
+                    readOnly
+                    className="percentage-calculator-input"
+                />
+                <div className="percentage-calculator-result">
+                    {result2}
+                </div>
+                <textarea
+                    placeholder="Explanation"
+                    value={explanation2}
+                    readOnly
+                    className="percentage-calculator-input"
+                />
+                <div className="percentage-calculator-result">
+                    {result3}
+                </div>
+                <textarea
+                    placeholder="Explanation"
+                    value={explanation3}
+                    readOnly
+                    className="percentage-calculator-input"
+                />
             </div>
-            <textarea
-                placeholder="Explanation"
-                value={explanation3}
-                readOnly
-                className="percentage-calculator-input"
-            />
         </div>
     );
 };
