@@ -44,7 +44,7 @@ const PercentageCalculator = () => {
             <div className="percentage-calculator-header">
                 <h1>Percentage Calculator</h1>
             </div>
-            <div className="percentage-calculator-inputs">0
+            <div className="percentage-calculator-inputs">
                 <input
                     type="text"
                     placeholder="Enter value A"
