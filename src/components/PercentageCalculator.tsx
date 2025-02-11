@@ -47,9 +47,9 @@ const PercentageCalculator = () => {
         setResult2(calculatedResult2.toString());
         setResult3(calculatedResult3.toString());
 
-        setExplanation1(`What is ${A}% of ${B}?`);
-        setExplanation2(`${A} is what percent of ${B}?`);
-        setExplanation3(`What is the percentage increase/decrease from ${A} to ${B}?`);
+        setExplanation1(`${calculatedResult1} is ${A}% of ${B}.`);
+        setExplanation2(`${A} is ${calculatedResult2}% of ${B}.`);
+        setExplanation3(`${calculatedResult3}% is the percentage ${calculatedResult3 >= 0 ? 'increase' : 'decrease'} from ${A} to ${B}.`);
     };
 
     return (
