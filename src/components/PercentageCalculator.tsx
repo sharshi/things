@@ -39,9 +39,9 @@ const PercentageCalculator = () => {
             return;
         }
 
-        const calculatedResult1 = (A / B) * 100;
-        const calculatedResult2 = ((A - B) / B) * 100;
-        const calculatedResult3 = ((B - A) / B) * 100;
+        const calculatedResult1 = (A / 100) * B;
+        const calculatedResult2 = (A / B) * 100;
+        const calculatedResult3 = ((B - A) / A) * 100;
 
         setResult1(calculatedResult1.toString());
         setResult2(calculatedResult2.toString());
