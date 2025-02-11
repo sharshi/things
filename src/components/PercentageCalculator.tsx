@@ -44,13 +44,21 @@ const PercentageCalculator = () => {
             <div className="percentage-calculator-header">
                 <h1>Percentage Calculator</h1>
             </div>
-            <div className="percentage-calculator-inputs">
-                <div className="percentage-calculator-input">
-                    {valueA}
-                </div>
-                <div className="percentage-calculator-input">
-                    {valueB}
-                </div>
+            <div className="percentage-calculator-inputs">0
+                <input
+                    type="text"
+                    placeholder="Enter value A"
+                    value={valueA}
+                    onChange={(e) => setValueA(e.target.value)}
+                    className="percentage-calculator-input"
+                />
+                <input
+                    type="text"
+                    placeholder="Enter value B"
+                    value={valueB}
+                    onChange={(e) => setValueB(e.target.value)}
+                    className="percentage-calculator-input"
+                />
             </div>
             <div className="percentage-calculator-results">
                 <div className="percentage-calculator-output">
