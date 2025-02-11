@@ -4,9 +4,9 @@ import '../styles.css';
 const PercentageCalculator = () => {
     const [valueA, setValueA] = useState('');
     const [valueB, setValueB] = useState('');
-    const [explanation1, setExplanation1] = useState('');
-    const [explanation2, setExplanation2] = useState('');
-    const [explanation3, setExplanation3] = useState('');
+    const [explanation1, setExplanation1] = useState();
+    const [explanation2, setExplanation2] = useState();
+    const [explanation3, setExplanation3] = useState();
 
     useEffect(() => {
         handleCalculation();
