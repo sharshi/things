@@ -34,9 +34,9 @@ const PercentageCalculator = () => {
         const calculatedResult2 = (A / B) * 100;
         const calculatedResult3 = ((B - A) / A) * 100;
 
-        setExplanation1(`${calculatedResult1} is ${A}% of ${B}.`);
-        setExplanation2(`${A} is ${calculatedResult2}% of ${B}.`);
-        setExplanation3(`${calculatedResult3}% is the percentage ${calculatedResult3 >= 0 ? 'increase' : 'decrease'} from ${A} to ${B}.`);
+        setExplanation1(<span><strong>{calculatedResult1}</strong> is {A}% of {B}.</span>);
+        setExplanation2(<span>{A} is <strong>{calculatedResult2}%</strong> of {B}.</span>);
+        setExplanation3(<span><strong>{calculatedResult3}%</strong> is the percentage {calculatedResult3 >= 0 ? 'increase' : 'decrease'} from {A} to {B}.</span>);
     };
 
     return (
