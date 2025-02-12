@@ -4,6 +4,7 @@ import DiffViewer from './components/DiffViewer';
 import Base64Page from './components/Base64Page';
 import PercentageCalculator from './components/PercentageCalculator';
 import Navbar from './components/Navbar';
+import PaceCalculator from './components/PaceCalculator';
 import './styles.css';
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
                     <Route path="diff" element={<DiffViewer />} />
                     <Route path="base64" element={<Base64Page />} />
                     <Route path="percentage-calculator" element={<PercentageCalculator />} />
+                    <Route path="pace-calculator" element={<PaceCalculator />} />
                     <Route path="*" element={<Home />} />
                 </Routes>
             </div>
