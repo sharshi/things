@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import '../styles.css';
 
+type Unit = 'miles' | 'kilometers';
+
 const PaceCalculator = () => {
     const [distance, setDistance] = useState('');
     const [time, setTime] = useState({ hours: '', minutes: '', seconds: '' });
     const [pace, setPace] = useState('');
-    const [unit, setUnit] = useState('miles');
+    const [unit, setUnit] = useState<Unit>('miles');
     const [result, setResult] = useState('');
 
     const handleCalculatePace = () => {
@@ -60,7 +62,7 @@ const PaceCalculator = () => {
         setResult(`Distance: ${dist.toFixed(2)} ${unit}`);
     };
 
-    const handleUnitChange = (newUnit) => {
+    const handleUnitChange = (newUnit: Unit) => {
         if (newUnit === unit) return;
 
         const conversionFactor = newUnit === 'miles' ? 1 / 1.60934 : 1.60934;
