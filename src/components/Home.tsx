@@ -13,6 +13,9 @@ export const Home = () => {
                 <li style={{ marginBottom: '10px', flexGrow: 1 }}>
                     <strong>Percentage Calculator:</strong> Calculate percentages easily.
                 </li>
+                <li style={{ marginBottom: '10px', flexGrow: 1 }}>
+                    <strong>Pace Calculator:</strong> Calculate your running pace, time, or distance.
+                </li>
             </ul>
         </div>
     );
