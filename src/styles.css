@@ -202,3 +202,66 @@
         font-size: 16px;
     }
 }
+
+
+/* Basic styling for the body and font */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f3f4f6;
+}
+
+/* Style for draggable items */
+.task.dragging {
+    opacity: 0.5;
+    border: 2px dashed #cbd5e1;
+}
+
+/* Style for columns when dragging over */
+.kanban-column.drag-over {
+    background-color: #e2e8f0;
+    border: 2px dashed #94a3b8;
+}
+
+/* Ensure columns take up height */
+.kanban-column {
+    min-height: 300px;
+}
+
+/* Hide default drag image */
+.task.dragging img {
+    display: none;
+}
+
+/* Custom scrollbar for task lists */
+.tasks-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.tasks-container::-webkit-scrollbar-track {
+    background: #e5e7eb;
+    border-radius: 10px;
+}
+
+.tasks-container::-webkit-scrollbar-thumb {
+    background-color: #9ca3af;
+    border-radius: 10px;
+    border: 2px solid #e5e7eb;
+}
+
+/* Style for the add task button */
+button {
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Style for task delete button */
+.delete-task-btn {
+    transition: color 0.3s ease;
+}
+
+.delete-task-btn:hover {
+    color: #ef4444;
+}
