@@ -11,6 +11,7 @@ const Navbar = () => {
             <Link to="/base64" className={location.pathname === '/base64' ? 'active' : ''}>Base64 Encode/Decode</Link>
             <Link to="/percentage-calculator" className={location.pathname === '/percentage-calculator' ? 'active' : ''}>Percentage Calculator</Link>
             <Link to="/pace-calculator" className={location.pathname === '/pace-calculator' ? 'active' : ''}>Pace Calculator</Link>
+            <Link to="/task-manager" className={location.pathname === '/task-manager' ? 'active' : ''}>Task Manager</Link>
         </nav>
     );
 };
