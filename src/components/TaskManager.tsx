@@ -191,6 +191,7 @@ const KanbanPage = () => {
 
     // Show confirmation dialog
     const showConfirmation = (hi: string, func: any) => {
+        console.log(hi);
         func();
     //     const ConfirmDialog = ({ message, onConfirm, onCancel }: any) => (
     //         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-40">
