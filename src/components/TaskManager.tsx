@@ -239,7 +239,7 @@ const KanbanPage = () => {
         // if (window.confirm(message)) {
         //     onConfirm();
         // }
-    };
+   // };
 
     return (
         <div className="p-4 md:p-8">
