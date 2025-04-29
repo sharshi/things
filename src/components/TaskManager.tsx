@@ -36,7 +36,7 @@ const KanbanPage = () => {
             text: newTaskText
         };
 
-        setTasks(prev => ({
+        setTasks((prev: any) => ({
             ...prev,
             todo: [...prev.todo, newTask]
         }));
@@ -44,12 +44,12 @@ const KanbanPage = () => {
     };
 
     // Delete a task after confirmation
-    const deleteTask = (taskId) => {
+    const deleteTask = (taskId: any) => {
         showConfirmation('Are you sure you want to delete this task?', () => {
-            setTasks(prev => {
+            setTasks((prev: any) => {
                 const newTasks = { ...prev };
                 for (const columnId in newTasks) {
-                    newTasks[columnId] = newTasks[columnId].filter(task => task.id !== taskId);
+                    newTasks[columnId] = newTasks[columnId].filter((task: any) => task.id !== taskId);
                 }
                 return newTasks;
             });
@@ -57,14 +57,14 @@ const KanbanPage = () => {
     };
 
     // Handle drag start
-    const handleDragStart = (e, taskId, columnId) => {
+    const handleDragStart = (e: any, taskId: any, columnId: any) => {
         setDraggedTask(taskId);
         setSourceColumnId(columnId);
         e.currentTarget.classList.add('dragging');
     };
 
     // Handle drag end
-    const handleDragEnd = (e) => {
+    const handleDragEnd = (e: any) => {
         e.currentTarget.classList.remove('dragging');
         setDraggedTask(null);
         setSourceColumnId(null);
@@ -74,7 +74,7 @@ const KanbanPage = () => {
     };
 
     // Handle drag over a column
-    const handleDragOver = (e) => {
+    const handleDragOver = (e: any) => {
         e.preventDefault();
         const column = e.currentTarget;
         if (column) {
@@ -85,33 +85,33 @@ const KanbanPage = () => {
     };
 
     // Handle drag enter
-    const handleDragEnter = (e) => {
+    const handleDragEnter = (e: any) => {
         e.preventDefault();
         e.currentTarget.classList.add('drag-over');
     };
 
     // Handle drag leave
-    const handleDragLeave = (e) => {
+    const handleDragLeave = (e: any) => {
         if (!e.currentTarget.contains(e.relatedTarget)) {
             e.currentTarget.classList.remove('drag-over');
         }
     };
 
     // Handle drop to move task between columns
-    const handleDrop = (e, targetColumnId) => {
+    const handleDrop = (e: any, targetColumnId: any) => {
         e.preventDefault();
         e.currentTarget.classList.remove('drag-over');
 
         if (draggedTask && sourceColumnId) {
             // Find the task to move
-            const taskToMove = tasks[sourceColumnId].find(task => task.id === draggedTask);
+            const taskToMove = tasks[sourceColumnId].find((task: any) => task.id === draggedTask);
 
             if (taskToMove) {
-                setTasks(prev => {
+                setTasks((prev: any) => {
                     const newTasks = { ...prev };
                     // Remove from source column
                     newTasks[sourceColumnId] = newTasks[sourceColumnId].filter(
-                        task => task.id !== draggedTask
+                        (task: any) => task.id !== draggedTask
                     );
                     // Add to target column
                     newTasks[targetColumnId] = [...newTasks[targetColumnId], taskToMove];
@@ -146,7 +146,7 @@ const KanbanPage = () => {
         const animationEnd = Date.now() + duration;
         const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 1000 };
 
-        const randomInRange = (min, max) => Math.random() * (max - min) + min;
+        const randomInRange = (min: any, max: any) => Math.random() * (max - min) + min;
 
         const interval = setInterval(() => {
             const timeLeft = animationEnd - Date.now();
@@ -175,7 +175,7 @@ const KanbanPage = () => {
     };
 
     // Show temporary message (like an alert)
-    const showTemporaryMessage = (message) => {
+    const showTemporaryMessage = (message: any) => {
         const messageBox = document.createElement('div');
         messageBox.textContent = message;
         messageBox.className = 'fixed top-5 left-1/2 transform -translate-x-1/2 bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 transition-opacity duration-300 ease-out';
@@ -190,8 +190,8 @@ const KanbanPage = () => {
     };
 
     // Show confirmation dialog
-    const showConfirmation = (message, onConfirm) => {
-        const ConfirmDialog = ({ message, onConfirm, onCancel }) => (
+    const showConfirmation = (message: any, onConfirm: any) => {
+        const ConfirmDialog = ({ message, onConfirm, onCancel }: any) => (
             <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-40">
                 <div className="bg-white p-6 rounded-lg shadow-xl max-w-sm w-full mx-4">
                     <p className="text-gray-700 mb-4">{message}</p>
@@ -223,22 +223,22 @@ const KanbanPage = () => {
         // This would typically use ReactDOM.render in a non-hooks context
         // In a real React app, you'd use a context or state to manage this UI
         // This is a simplified representation
-        const component = (
-            <ConfirmDialog
-                message={message}
-                onConfirm={() => {
-                    onConfirm();
-                    cleanup();
-                }}
-                onCancel={cleanup}
-            />
-        );
+        // const (component: any = (
+        //     <ConfirmDialog
+        //         message={message}
+        //         onConfirm={() => {
+        //             onConfirm();
+        //             cleanup();
+        //         }}
+        //         onCancel={cleanup}
+        //     />
+        // );
 
-        // In a real implementation, you'd render this component
-        // For this example, we'll just call the confirm function directly
-        if (window.confirm(message)) {
-            onConfirm();
-        }
+        // // In a real implementation, you'd render this component
+        // // For this example, we'll just call the confirm function directly
+        // if (window.confirm(message)) {
+        //     onConfirm();
+        // }
     };
 
     return (
@@ -283,7 +283,7 @@ const KanbanPage = () => {
                                         'Done 🎉'}
                             </h2>
                             <div className="tasks-container flex-grow space-y-3 overflow-y-auto max-h-96 p-1">
-                                {tasks[columnId].map(task => (
+                                {tasks[columnId].map((task: any) => (
                                     <div
                                         key={task.id}
                                         className="task bg-gray-100 p-3 rounded-md shadow-sm cursor-grab flex justify-between items-center"
