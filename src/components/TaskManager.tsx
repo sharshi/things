@@ -190,35 +190,35 @@ const KanbanPage = () => {
     };
 
     // Show confirmation dialog
-    const showConfirmation = (message: any, onConfirm: any) => {
-        const ConfirmDialog = ({ message, onConfirm, onCancel }: any) => (
-            <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-40">
-                <div className="bg-white p-6 rounded-lg shadow-xl max-w-sm w-full mx-4">
-                    <p className="text-gray-700 mb-4">{message}</p>
-                    <div className="flex justify-end gap-3">
-                        <button
-                            className="px-4 py-2 bg-gray-300 text-gray-800 rounded-md hover:bg-gray-400 transition"
-                            onClick={onCancel}
-                        >
-                            Cancel
-                        </button>
-                        <button
-                            className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition"
-                            onClick={onConfirm}
-                        >
-                            Confirm
-                        </button>
-                    </div>
-                </div>
-            </div>
-        );
+    // const showConfirmation = () => {
+    //     const ConfirmDialog = ({ message, onConfirm, onCancel }: any) => (
+    //         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-40">
+    //             <div className="bg-white p-6 rounded-lg shadow-xl max-w-sm w-full mx-4">
+    //                 <p className="text-gray-700 mb-4">{message}</p>
+    //                 <div className="flex justify-end gap-3">
+    //                     <button
+    //                         className="px-4 py-2 bg-gray-300 text-gray-800 rounded-md hover:bg-gray-400 transition"
+    //                         onClick={onCancel}
+    //                     >
+    //                         Cancel
+    //                     </button>
+    //                     <button
+    //                         className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition"
+    //                         onClick={onConfirm}
+    //                     >
+    //                         Confirm
+    //                     </button>
+    //                 </div>
+    //             </div>
+    //         </div>
+    //     );
 
-        const confirmRoot = document.createElement('div');
-        document.body.appendChild(confirmRoot);
+        // const confirmRoot = document.createElement('div');
+        // document.body.appendChild(confirmRoot);
 
-        const cleanup = () => {
-            document.body.removeChild(confirmRoot);
-        };
+        // const cleanup = () => {
+        //     document.body.removeChild(confirmRoot);
+        // };
 
         // This would typically use ReactDOM.render in a non-hooks context
         // In a real React app, you'd use a context or state to manage this UI
