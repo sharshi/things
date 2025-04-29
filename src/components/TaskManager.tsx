@@ -190,7 +190,7 @@ const KanbanPage = () => {
     };
 
     // Show confirmation dialog
-    // const showConfirmation = () => {
+    const showConfirmation = () => {
     //     const ConfirmDialog = ({ message, onConfirm, onCancel }: any) => (
     //         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-40">
     //             <div className="bg-white p-6 rounded-lg shadow-xl max-w-sm w-full mx-4">
@@ -239,7 +239,7 @@ const KanbanPage = () => {
         // if (window.confirm(message)) {
         //     onConfirm();
         // }
-   // };
+   };
 
     return (
         <div className="p-4 md:p-8">
